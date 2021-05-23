@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Exemplo de mouseclick
+    <p id="paragrafo">
+        Click aqui
+    </p>
+    <script>
+        var p = document.getElementById("paragrafo");
+
+        p.addEventListener('click', showPosition);
+
+        function showPosition(event) {
+            alert("Posição X: " + event.screenX + ", Posição Y: " + event.screenY + ":")
+        }
+    </script>
+</body>
+</html>
