@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" >Click aqui</button>
+    <a href="#" >Click aqui</a>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    var link = document.querySelector('a');
+
+    btn.addEventListener('click', alertaBotao)
+    link.addEventListener('click', alertaLink)
+
+
+    function alertaBotao( e ) {
+        var o_event = e ? e : window.event;
+        var msg = "Posição X é: " + o_event.screenX;
+        window.alert(msg);
+    }
+    function alertaLink( e ) {
+        var o_event = e ? e : window.event;
+        var msg = "Posição X é: " + o_event.screenX;
+        window.alert(msg);
+    }
+</script>
+</html>
