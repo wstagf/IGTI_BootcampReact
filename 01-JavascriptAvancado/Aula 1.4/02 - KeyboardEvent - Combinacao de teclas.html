@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Exemplo de combinacao de teclas, a e d</p>
+    <br>
+    
+
+    <script>
+        function runDoubleKeys(func, ...codes) {
+            var pressed = new Set();
+            
+            document.addEventListener('keydown', (event) => {
+                    pressed.add(event.code);
+
+                    for (let code of codes) {
+                        if(!pressed.has(code)) {
+                            return;
+                        }
+                    }
+
+                    pressed.clear();
+                    func();
+                } 
+            );
+
+            document.addEventListener('keyup', (event) => {
+                    pressed.delete(event.code);
+                } 
+            );
+        }
+
+        runDoubleKeys(
+            () => alert('combinacao de duas teclas'),
+            'KeyA', 'KeyD'
+        )
+
+    </script>
+</body>
+</html>
