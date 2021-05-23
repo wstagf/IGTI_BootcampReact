@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Exemplo de mouseOver e MouseOut
+    <input id="inp" value="Click aqui" type="button">
+    <textarea id="txta"></textarea>
+    <input  value="Clear" type="button" onclick="txta.value = ''">
+
+    <script>
+        var p = document.getElementById("inp");
+        txta = document.getElementById("txta");
+
+        p.addEventListener('mousedown', log);
+        p.addEventListener('mouseup', log);
+        p.addEventListener('click', log);
+        p.addEventListener('contextmenu', log);
+        p.addEventListener('dblclick', log);
+
+        function log(event) {
+            txta.value += event.type + '\n';
+        }
+
+    </script>
+</body>
+</html>
