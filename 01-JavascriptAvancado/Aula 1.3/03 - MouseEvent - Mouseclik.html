@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .select {
+            background: #0f0;
+        }
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    Selecione os itens da lista:
+    <ul id="ul">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+    </ul>
+    <script>
+        var p = document.getElementById("ul");
+
+        p.addEventListener('click', selectItem);
+
+        function selectItem(event) {
+            if(event.target.tagName != 'LI') return;
+
+            if(event.controlKey || event.metaKey) {
+                toggleSelect(event.target);
+            } else {
+                singleSelect(event.target)
+            }
+        }
+
+        function toggleSelect(li) {
+            li.classList.add('select');
+        }
+
+        function singleSelect(li) {
+            var selected = ul.querySelectorAll('.select');
+            for (var elem of selected) {
+                elem.classList.remove('select')
+            }
+            li.classList.add('select');
+        }
+    </script>
+</body>
+</html>
